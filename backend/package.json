@@ -1,0 +1,17 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "we are just learning the basics of mern stack",
+  "main": "index.js",
+  "scripts": {
+    "rehan-dev": "nodemon run server.js"
+  },
+  "author": "Shakil Khan",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
+}
