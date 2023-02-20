@@ -4,7 +4,7 @@
   "description": "we are just learning the basics of mern stack",
   "main": "index.js",
   "scripts": {
-    "rehan-dev": "nodemon run server.js"
+    "dev": "nodemon run server.js"
   },
   "author": "Shakil Khan",
   "license": "ISC",
