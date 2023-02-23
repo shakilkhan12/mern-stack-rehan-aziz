@@ -1,23 +1,15 @@
-module.exports.posts = (req, res) => {
-  const posts = [
-    { id: 1, title: "first post" },
-    { id: 2, title: "second post" },
-    { id: 3, title: "thid post" },
-    { id: 4, title: "fourth post" },
-    { id: 5, title: "fifth post" },
-  ];
-  return res.status(200).json({ posts });
-};
+const { validationResult } = require("express-validator");
+const User = require("../models/user");
 module.exports.home = (req, res) => {
-  const users = [
-    { id: 1, name: "Rehan" },
-    { id: 2, name: "Aziz" },
-    { id: 3, name: "Shakil" },
-    { id: 4, name: "Sajid" },
-  ];
-  return res.status(200).json({ msg: "home route", users });
+  return res.status(200).json({ msg: "home route" });
 };
 module.exports.register = (req, res) => {
+  const errors = validationResult(req);
+  if (errors.isEmpty()) {
+    return res.status(200).json({ msg: "fine" });
+  } else {
+    return res.status(401).json({ errors: errors.array() });
+  }
   const myData = req.body;
   return res.status(200).json({ data: myData });
 };
